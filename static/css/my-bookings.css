@@ -1,0 +1,413 @@
+/* =========================================================
+   HOSTEL FINDER - MY BOOKINGS
+   Professional Green Theme
+   ========================================================= */
+
+:root {
+    --primary: #176b4d;
+    --primary-dark: #0f5139;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e1e9e4;
+}
+
+
+/* ================= BODY ================= */
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 5% 10%,
+            rgba(23, 107, 77, 0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 95% 90%,
+            rgba(244, 185, 66, 0.08),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #f1f8f4,
+            #f8faf9
+        );
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background:
+        linear-gradient(
+            135deg,
+            #173b2f,
+            #176b4d
+        ) !important;
+
+    padding: 15px 0;
+
+    box-shadow:
+        0 5px 20px rgba(15, 81, 57, 0.16);
+}
+
+
+.navbar-brand {
+    font-size: 20px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.navbar-brand:hover {
+    transform: translateX(3px);
+}
+
+
+.navbar .btn-outline-light {
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.navbar .btn-outline-light:hover {
+    background: #ffffff;
+
+    color: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= MAIN ================= */
+
+main.container {
+    max-width: 1180px;
+}
+
+
+/* ================= PAGE TITLE ================= */
+
+main > .text-center h1 {
+    color: var(--primary-dark);
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+
+main > .text-center p {
+    color: var(--muted) !important;
+
+    font-size: 16px;
+}
+
+
+/* ================= BOOKING CARD ================= */
+
+.row.g-4 > .col-md-6 {
+    display: flex;
+}
+
+
+.row.g-4 > .col-md-6 .card {
+    width: 100%;
+}
+
+
+.row.g-4 .card {
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px !important;
+
+    box-shadow:
+        0 8px 25px rgba(15, 81, 57, 0.07) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.row.g-4 .card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c4dbcf;
+
+    box-shadow:
+        0 17px 38px rgba(15, 81, 57, 0.13) !important;
+}
+
+
+/* ================= HOSTEL NAME ================= */
+
+.row.g-4 .card h3 {
+    color: var(--primary-dark);
+
+    font-size: 22px;
+
+    font-weight: 750;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= TEXT ================= */
+
+.row.g-4 .card p {
+    line-height: 1.6;
+
+    color: #374151;
+}
+
+
+.row.g-4 .card p.text-muted {
+    color: var(--muted) !important;
+}
+
+
+/* ================= DIVIDER ================= */
+
+.row.g-4 .card hr {
+    border-color: #e3ebe6;
+
+    opacity: 1;
+
+    margin: 18px 0;
+}
+
+
+/* ================= STATUS ================= */
+
+.badge {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.badge.bg-warning {
+    background: #ffc107 !important;
+
+    color: #3d3100 !important;
+}
+
+
+.badge.bg-success {
+    background: #198754 !important;
+}
+
+
+.badge.bg-danger {
+    background: #dc3545 !important;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.card .btn {
+    min-height: 45px;
+
+    border-radius: 10px;
+
+    font-weight: 650;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+
+/* View Hostel */
+
+.card .btn-primary {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+}
+
+
+.card .btn-primary:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            #0b422f
+        );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px rgba(23, 107, 77, 0.25);
+}
+
+
+/* Cancel */
+
+.card .btn-danger {
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc3545,
+            #b42332
+        );
+}
+
+
+.card .btn-danger:hover {
+    background:
+        linear-gradient(
+            135deg,
+            #b42332,
+            #991f2b
+        );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px rgba(220, 53, 69, 0.22);
+}
+
+
+/* ================= EMPTY STATE ================= */
+
+main > .card.shadow-sm {
+    background: rgba(255, 255, 255, 0.97);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(15, 81, 57, 0.08) !important;
+}
+
+
+main > .card.shadow-sm .fs-1 {
+    font-size: 48px !important;
+}
+
+
+main > .card.shadow-sm h2 {
+    color: var(--primary-dark);
+
+    font-weight: 750;
+}
+
+
+main > .card.shadow-sm .btn {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 11px 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    font-weight: 650;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+main > .card.shadow-sm .btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px rgba(23, 107, 77, 0.25);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    margin-top: 25px;
+
+    background: #173b2f;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    padding: 22px;
+
+    font-size: 14px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    main > .text-center h1 {
+        font-size: 30px;
+    }
+
+    .row.g-4 > .col-md-6 {
+        display: block;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar-brand {
+        font-size: 17px;
+    }
+
+    main > .text-center h1 {
+        font-size: 27px;
+    }
+
+    .row.g-4 .card {
+        border-radius: 17px !important;
+    }
+
+    main > .card.shadow-sm {
+        border-radius: 17px;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+}

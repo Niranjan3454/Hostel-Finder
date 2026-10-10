@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Hostel - Hostel Finder</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/edit-hostel.css') }}">
+      
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Edit Hostel</h1>
+
+    <p>Update your hostel information and vacancy.</p>
+
+    <form method="POST"
+          action="/owner/edit-hostel/{{ hostel.hostel_id }}">
+
+        <label>Hostel Name</label>
+
+        <input type="text"
+               name="hostel_name"
+               value="{{ hostel.hostel_name }}"
+               required>
+
+
+        <label>Address</label>
+
+        <input type="text"
+               name="address"
+               value="{{ hostel.address }}"
+               required>
+
+
+        <label>Area</label>
+
+        <input type="text"
+               name="area"
+               value="{{ hostel.area }}"
+               required>
+
+
+        <label>City</label>
+
+        <input type="text"
+               name="city"
+               value="{{ hostel.city }}"
+               required>
+
+
+        <label>Hostel Type</label>
+
+        <select name="hostel_type" required>
+
+            <option value="BOYS"
+                {% if hostel.hostel_type == "BOYS" %}selected{% endif %}>
+                Boys
+            </option>
+
+            <option value="GIRLS"
+                {% if hostel.hostel_type == "GIRLS" %}selected{% endif %}>
+                Girls
+            </option>
+
+            <option value="UNISEX"
+                {% if hostel.hostel_type == "UNISEX" %}selected{% endif %}>
+                Unisex
+            </option>
+
+        </select>
+
+
+        <label>Monthly Rent (₹)</label>
+
+        <input type="number"
+               name="rent"
+               min="0"
+               value="{{ hostel.rent }}"
+               required>
+
+
+        <label>Total Beds</label>
+
+        <input type="number"
+               name="total_beds"
+               min="1"
+               value="{{ hostel.total_beds }}"
+               required>
+
+
+        <label>Available Beds</label>
+
+        <input type="number"
+               name="available_beds"
+               min="0"
+               value="{{ hostel.available_beds }}"
+               required>
+
+
+        <label>Contact Number</label>
+
+        <input type="tel"
+               name="contact_no"
+               value="{{ hostel.contact_no }}"
+               maxlength="15"
+               required>
+
+
+        <label>Facilities</label>
+
+        <textarea name="facilities">{{ hostel.facilities or "" }}</textarea>
+
+
+        <label>Description</label>
+
+        <textarea name="description">{{ hostel.description or "" }}</textarea>
+
+
+        <button type="submit">
+            Update Hostel
+        </button>
+
+    </form>
+
+
+    <br>
+
+    <a href="/owner/my-hostels">
+        ← Back to My Hostels
+    </a>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,960 @@
+/* =========================================================
+   HOSTEL FINDER - HOME PAGE
+   Professional Green Theme
+   ========================================================= */
+
+
+/* ================= ROOT ================= */
+
+:root {
+    --primary: #176b4d;
+    --primary-dark: #0f5139;
+    --primary-light: #e9f7f0;
+
+    --accent: #f4b942;
+    --accent-dark: #d99d22;
+
+    --text: #1f2937;
+    --muted: #6b7280;
+
+    --white: #ffffff;
+    --light: #f6f9f7;
+    --border: #e5e7eb;
+
+    --shadow-sm: 0 5px 18px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.09);
+    --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.12);
+
+    --radius: 18px;
+}
+
+
+/* ================= GLOBAL ================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text);
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    ) !important;
+
+    padding: 16px 0;
+
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.12);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    transition: 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: translateY(-2px);
+    color: #ffffff !important;
+}
+
+
+/* Navbar buttons */
+
+.navbar .btn {
+    border-radius: 10px;
+    padding: 9px 17px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+
+/* Login */
+
+.navbar .btn-outline-light:hover {
+    background: #ffffff;
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Register */
+
+.navbar .btn-light {
+    color: var(--primary-dark);
+}
+
+.navbar .btn-light:hover {
+    background: #e8f5ef;
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Owner button */
+
+.navbar .btn-warning {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #222;
+}
+
+.navbar .btn-warning:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    transform: translateY(-2px);
+}
+
+
+/* Dropdown */
+
+.dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+.dropdown-item {
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,0.8),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #dff5e9,
+            #eef9f3
+        );
+
+    padding: 105px 20px 90px;
+
+    overflow: hidden;
+}
+
+
+/* Decorative circles */
+
+.hero::before {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(23, 107, 77, 0.08);
+
+    top: -120px;
+    right: -80px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 185, 66, 0.12);
+
+    bottom: -90px;
+    left: -50px;
+}
+
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Hero heading */
+
+.hero h1 {
+    font-size: clamp(36px, 5vw, 58px);
+
+    font-weight: 800;
+
+    color: var(--primary-dark);
+
+    margin-bottom: 18px;
+
+    letter-spacing: -1px;
+}
+
+
+/* Hero paragraph */
+
+.hero p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 19px;
+
+    color: #56635d;
+}
+
+
+/* ================= SEARCH BOX ================= */
+
+.search-box {
+    max-width: 1050px;
+
+    margin: 42px auto 0;
+
+    padding: 22px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-lg);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Inputs */
+
+.search-box .form-control,
+.search-box .form-select {
+
+    min-height: 50px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    padding: 10px 14px;
+
+    color: var(--text);
+
+    transition: all 0.25s ease;
+}
+
+
+.search-box .form-control:focus,
+.search-box .form-select:focus {
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(23, 107, 77, 0.12);
+}
+
+
+/* Search button */
+
+.search-box .btn-primary {
+
+    min-height: 50px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: var(--primary);
+
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+}
+
+
+.search-box .btn-primary:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(23, 107, 77, 0.25);
+}
+
+
+.search-box .btn-primary:active {
+
+    transform: translateY(-1px);
+}
+
+
+/* ================= SECTION HEADINGS ================= */
+
+main h2,
+section h2 {
+
+    color: var(--primary-dark);
+
+    font-weight: 750;
+
+    letter-spacing: -0.3px;
+}
+
+
+.text-muted {
+    color: var(--muted) !important;
+}
+
+
+/* ================= LOCATION SECTION ================= */
+
+.location-card {
+
+    background: var(--white);
+
+    padding: 30px 22px;
+
+    border-radius: var(--radius);
+
+    text-align: center;
+
+    height: 100%;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.location-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(23, 107, 77, 0.25);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.location-card h4 {
+
+    color: var(--primary-dark);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.location-card p {
+
+    color: var(--muted);
+
+    min-height: 48px;
+}
+
+
+/* Location button */
+
+.location-card .btn {
+
+    margin-top: 8px;
+
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+
+.location-card .btn-outline-primary {
+
+    color: var(--primary);
+
+    border-color: var(--primary);
+}
+
+
+.location-card .btn-outline-primary:hover {
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(23, 107, 77, 0.2);
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+
+    background:
+        linear-gradient(
+            180deg,
+            #f4f8f6,
+            #eef5f1
+        );
+
+    border-top: 1px solid #edf1ee;
+
+    border-bottom: 1px solid #edf1ee;
+}
+
+
+.feature-card {
+
+    background: #ffffff;
+
+    padding: 38px 28px;
+
+    border-radius: var(--radius);
+
+    height: 100%;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.feature-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.feature-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+
+    background: var(--primary-light);
+
+    border-radius: 18px;
+
+    transition: 0.3s ease;
+}
+
+
+.feature-card:hover .feature-icon {
+
+    transform: scale(1.08) rotate(2deg);
+
+    background: #d9f0e4;
+}
+
+
+.feature-card h4 {
+
+    color: var(--primary-dark);
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.feature-card p {
+
+    color: var(--muted);
+
+    margin-bottom: 0;
+}
+
+
+/* ================= OWNER SECTION ================= */
+
+.owner-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+
+    color: white;
+
+    padding: 55px 30px;
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow-lg);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.owner-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.07);
+
+    top: -100px;
+    right: -60px;
+}
+
+
+.owner-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+
+    background: rgba(244,185,66,0.12);
+
+    bottom: -70px;
+    left: -40px;
+}
+
+
+.owner-section h2 {
+
+    position: relative;
+    z-index: 1;
+
+    color: white;
+
+    font-weight: 800;
+}
+
+
+.owner-section p {
+
+    position: relative;
+    z-index: 1;
+
+    max-width: 650px;
+
+    margin: 12px auto 25px;
+
+    color: rgba(255,255,255,0.85);
+}
+
+
+/* Owner button */
+
+.owner-section .btn-primary {
+
+    position: relative;
+    z-index: 1;
+
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    color: #222;
+
+    border-radius: 10px;
+
+    padding: 11px 24px;
+
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+}
+
+
+.owner-section .btn-primary:hover {
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    color: var(--primary-dark);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d3b2b,
+            #173b2f
+        );
+
+    color: rgba(255,255,255,0.85);
+
+    text-align: center;
+
+    padding: 24px 15px;
+
+    margin-top: 20px;
+}
+
+
+footer p {
+
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* ================= GENERAL BUTTON EFFECT ================= */
+
+.btn {
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.btn:hover {
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= SELECTION ================= */
+
+::selection {
+
+    background: var(--primary);
+
+    color: white;
+}
+
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f3;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #9bb9aa;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar .container {
+        gap: 12px;
+    }
+
+    .navbar-brand {
+        font-size: 19px;
+    }
+
+    .navbar .d-flex {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .navbar .btn {
+        padding: 7px 11px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 75px 18px 65px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .search-box {
+        padding: 16px;
+        margin-top: 30px;
+    }
+
+    .location-card {
+        padding: 25px 18px;
+    }
+
+    .feature-card {
+        padding: 30px 20px;
+    }
+
+    .owner-section {
+        padding: 42px 20px;
+        border-radius: 18px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .navbar .d-flex {
+        gap: 5px !important;
+    }
+
+    .navbar .btn {
+        font-size: 12px;
+        padding: 6px 9px;
+    }
+
+    .search-box {
+        border-radius: 15px;
+    }
+
+    .owner-section h2 {
+        font-size: 25px;
+    }
+}
+/* =====================================================
+   HOSTELLER / OWNER NAVBAR DROPDOWN
+   ===================================================== */
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Button */
+
+.nav-dropdown-btn {
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    background: #ffffff;
+    color: #173b2f;
+
+    padding: 12px 20px;
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: all 0.25s ease;
+}
+
+
+/* Button Hover */
+
+.nav-dropdown-btn:hover {
+    background: #f0f8f4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Arrow */
+
+.dropdown-arrow {
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
+
+
+/* Dropdown Menu */
+
+.nav-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    min-width: 215px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 8px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 1000;
+}
+
+
+/* Show Dropdown */
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* Rotate Arrow */
+
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* Dropdown Links */
+
+.nav-dropdown-menu a {
+    display: block;
+
+    padding: 13px 16px;
+
+    color: #333;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    border-radius: 10px;
+
+    transition: all 0.2s ease;
+}
+
+
+/* Dropdown Link Hover */
+
+.nav-dropdown-menu a:hover {
+    background: #e8f5ef;
+    color: #146c4e;
+
+    padding-left: 20px;
+}
+
+
+/* =====================================================
+   NAVBAR DROPDOWN MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    .nav-dropdown-btn {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+
+    .nav-dropdown-menu {
+        right: 0;
+        min-width: 200px;
+    }
+
+}

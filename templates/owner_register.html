@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Registration - Hostel Finder</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/owner-register.css') }}">
+      
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Hostel Owner Registration</h1>
+
+    <p>Create your owner account to add and manage your hostel.</p>
+
+    <form method="POST" action="/owner/register">
+
+        <label>Full Name</label>
+        <input type="text"
+               name="name"
+               placeholder="Enter your full name"
+               required>
+
+        <label>Email</label>
+        <input type="email"
+               name="email"
+               placeholder="Enter your email"
+               required>
+
+        <label>Phone Number</label>
+        <input type="tel"
+               name="phone"
+               placeholder="Enter your phone number"
+             pattern="[6-9][0-9]{9}"
+             minlength="10"
+             maxlength="10"
+             inputmode="numeric"
+             title="Enter a valid 10-digit mobile number starting with 6, 7, 8, or 9"
+               required>
+
+        <label>Password</label>
+        <input type="password"
+               name="password"
+               placeholder="Create a password"
+               required>
+
+        <button type="submit">
+            Register as Hostel Owner
+        </button>
+
+    </form>
+
+    <div class="form-links">
+        <p>
+            Already registered?
+            <a href="{{ url_for('owner_login') }}">Owner Login</a>
+        </p>
+
+        <p>
+            Looking for a hostel?
+            <a href="{{ url_for('hosteller_register') }}">Hosteller Registration</a>
+        </p>
+
+        <a href="{{ url_for('home') }}">&larr; Back to Home</a>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

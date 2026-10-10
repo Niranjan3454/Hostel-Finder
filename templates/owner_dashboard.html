@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Dashboard - Hostel Finder</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/owner_dashboard.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="dashboard-header">
+
+    <div>
+
+        <h2>🏠 Hostel Finder</h2>
+
+        <p>Owner Dashboard</p>
+
+    </div>
+
+
+    <a href="{{ url_for('owner_logout') }}"
+       class="logout-btn">
+
+        Logout
+
+    </a>
+
+</header>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="dashboard-container">
+
+
+    <!-- Welcome -->
+
+    <div class="welcome-section">
+
+        <h1>
+            Welcome, {{ owner_name }} 👋
+        </h1>
+
+        <p>
+            Manage your hostel listings, vacancy,
+            bookings and hostel information.
+        </p>
+
+    </div>
+
+
+
+    <!-- ================= DASHBOARD CARDS ================= -->
+
+    <div class="dashboard-cards">
+
+
+        <!-- ADD HOSTEL -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🏠
+            </div>
+
+            <h2>
+                Add Hostel
+            </h2>
+
+            <p>
+                Add your hostel details, rent,
+                facilities, contact information
+                and available beds.
+            </p>
+
+            <a href="{{ url_for('add_hostel') }}"
+               class="dashboard-btn">
+
+                Add Hostel
+
+            </a>
+
+        </div>
+
+
+
+        <!-- MY HOSTELS -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                📋
+            </div>
+
+            <h2>
+                My Hostels
+            </h2>
+
+            <p>
+                View and manage all hostels
+                added by you.
+            </p>
+
+            <a href="{{ url_for('my_hostels') }}"
+               class="dashboard-btn">
+
+                View Hostels
+
+            </a>
+
+        </div>
+
+
+
+        <!-- UPDATE VACANCY -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🛏️
+            </div>
+
+            <h2>
+                Update Vacancy
+            </h2>
+
+            <p>
+                Keep available bed information
+                updated for students.
+            </p>
+
+            <a href="{{ url_for('my_hostels') }}"
+               class="dashboard-btn">
+
+                Update Vacancy
+
+            </a>
+
+        </div>
+
+
+        <!-- Notifications -->
+
+<div class="dashboard-card">
+
+    <div class="card-icon">🔔</div>
+
+    <h2>
+    Notifications
+
+    {% if unread_count > 0 %}
+
+        <span class="badge bg-danger">
+            {{ unread_count }}
+        </span>
+
+    {% endif %}
+
+</h2>
+
+    <p>
+        View new booking requests and other notifications.
+    </p>
+
+    <a href="{{ url_for('owner_notifications') }}"
+       class="dashboard-btn">
+        View Notifications
+    </a>
+
+</div>
+
+
+
+        <!-- BOOKING REQUESTS -->
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                📋
+            </div>
+
+            <h2>
+                Booking Requests
+            </h2>
+
+            <p>
+                View booking requests from
+                hostellers and manage their status.
+            </p>
+
+            <a href="{{ url_for('owner_bookings') }}"
+               class="dashboard-btn">
+
+                View Bookings
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="{{ url_for('static', filename='js/script.js') }}">
+</script>
+
+
+</body>
+
+</html>

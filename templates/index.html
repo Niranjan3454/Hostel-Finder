@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hostel Finder</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/index.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="/">
+                🏠 Hostel Finder
+            </a>
+
+
+            <div class="d-flex gap-2">
+
+                <!-- Hosteller Menu -->
+
+                <div class="dropdown">
+
+                    <button
+                        class="btn btn-warning dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown">
+
+                        👤 Hosteller
+
+                    </button>
+
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a class="dropdown-item"
+                               href="/login">
+                                Hosteller Login
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                               href="/register">
+                                Register as Hosteller
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Owner Menu -->
+
+                <div class="dropdown">
+
+                    <button
+                        class="btn btn-warning dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown">
+
+                        🏠 Owner
+
+                    </button>
+
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+
+                        <li>
+                            <a class="dropdown-item"
+                               href="/owner/login">
+                                Owner Login
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                               href="/owner/register">
+                                Register as Owner
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="container text-center">
+
+            <h1>
+                Find Your Perfect Hostel 🏠
+            </h1>
+
+            <p>
+                Find affordable, comfortable and suitable
+                hostels near your college or workplace.
+            </p>
+
+
+            <!-- ================= SEARCH BOX ================= -->
+
+            <div class="search-box">
+
+                <form action="/search"
+                      method="GET">
+
+                    <div class="row g-2">
+
+
+                        <!-- Location -->
+
+                        <div class="col-md-5">
+
+                            <input
+                                type="text"
+                                name="location"
+                                id="homeLocation"
+                                class="form-control"
+                                placeholder="📍 Enter city or area">
+
+                        </div>
+
+
+                        <!-- Budget -->
+
+                        <div class="col-md-3">
+
+                            <select
+                                name="budget"
+                                id="homeBudget"
+                                class="form-select">
+
+                                <option value="">
+                                    Budget
+                                </option>
+
+                                <option value="5000">
+                                    Below ₹5,000
+                                </option>
+
+                                <option value="8000">
+                                    ₹5,000 - ₹8,000
+                                </option>
+
+                                <option value="12000">
+                                    ₹8,000 - ₹12,000
+                                </option>
+
+                                <option value="999999">
+                                    Above ₹12,000
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Type -->
+
+                        <div class="col-md-2">
+
+                            <select
+                                name="type"
+                                id="homeType"
+                                class="form-select">
+
+                                <option value="">
+                                    Type
+                                </option>
+
+                                <option value="BOYS">
+                                    Boys
+                                </option>
+
+                                <option value="GIRLS">
+                                    Girls
+                                </option>
+
+                                <option value="UNISEX">
+                                    Unisex
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Search Button -->
+
+                        <div class="col-md-2">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100">
+
+                                🔎 Search
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= POPULAR LOCATIONS ================= -->
+
+    <section class="container py-5">
+
+        <div class="text-center mb-4">
+
+            <h2>
+                Popular Locations
+            </h2>
+
+            <p class="text-muted">
+                Find hostels in popular student areas
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-3">
+
+                <div class="location-card">
+
+                    <h4>📍 Kothrud</h4>
+
+                    <p>
+                        Popular student area
+                    </p>
+
+                    <a href="/search?location=Kothrud"
+                       class="btn btn-sm btn-outline-primary">
+
+                        Find Hostels
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="location-card">
+
+                    <h4>📍 Wakad</h4>
+
+                    <p>
+                        Near IT hubs
+                    </p>
+
+                    <a href="/search?location=Wakad"
+                       class="btn btn-sm btn-outline-primary">
+
+                        Find Hostels
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="location-card">
+
+                    <h4>📍 Hinjewadi</h4>
+
+                    <p>
+                        Near IT Park
+                    </p>
+
+                    <a href="/search?location=Hinjewadi"
+                       class="btn btn-sm btn-outline-primary">
+
+                        Find Hostels
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-3">
+
+                <div class="location-card">
+
+                    <h4>📍 Viman Nagar</h4>
+
+                    <p>
+                        Near colleges
+                    </p>
+
+                    <a href="/search?location=Viman Nagar"
+                       class="btn btn-sm btn-outline-primary">
+
+                        Find Hostels
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features py-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <h2>
+                    Why Hostel Finder?
+                </h2>
+
+            </div>
+
+
+            <div class="row text-center g-4">
+
+
+                <!-- Feature 1 -->
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🔍
+                        </div>
+
+                        <h4>
+                            Easy Search
+                        </h4>
+
+                        <p>
+                            Search hostels based on location,
+                            budget and preferences.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature 2 -->
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🏠
+                        </div>
+
+                        <h4>
+                            Detailed Hostels
+                        </h4>
+
+                        <p>
+                            View hostel rent, vacancy,
+                            facilities and contact details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Feature 3 -->
+
+                <div class="col-md-4">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            📞
+                        </div>
+
+                        <h4>
+                            Contact Owners
+                        </h4>
+
+                        <p>
+                            Easily contact hostel owners
+                            for availability and information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OWNER SECTION ================= -->
+
+    <section class="container py-5">
+
+        <div class="owner-section text-center">
+
+            <h2>
+                Are you a Hostel Owner?
+            </h2>
+
+            <p>
+                List your hostel and reach students
+                looking for accommodation.
+            </p>
+
+
+            <a href="/owner/register"
+               class="btn btn-primary">
+
+                ➕ List Your Hostel
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Hostel Finder | All Rights Reserved
+        </p>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Your JavaScript -->
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+</body>
+
+</html>

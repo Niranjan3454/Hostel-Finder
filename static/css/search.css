@@ -1,0 +1,381 @@
+/* =========================================================
+   HOSTEL FINDER - SEARCH PAGE
+   Professional Green Theme
+   ========================================================= */
+
+:root {
+    --primary: #173b2f;
+    --primary-light: #245744;
+    --accent: #198754;
+    --accent-dark: #157347;
+    --background: #f5f8f6;
+    --card: #ffffff;
+    --text: #222;
+    --muted: #6c757d;
+    --border: #e2e8e5;
+}
+
+
+/* ================= BODY ================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-light)
+    );
+
+    padding: 15px 0;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    letter-spacing: 0.3px;
+}
+
+.navbar .btn {
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.navbar .btn:hover {
+    background: white;
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+
+/* ================= PAGE TITLE ================= */
+
+main {
+    min-height: 75vh;
+}
+
+main > .text-center h1 {
+    color: var(--primary);
+    font-size: 38px;
+}
+
+main > .text-center p {
+    font-size: 17px;
+}
+
+
+/* ================= SEARCH FILTER BOX ================= */
+
+main > .card {
+    border-radius: 16px !important;
+    background: var(--card);
+    border: 1px solid var(--border) !important;
+
+    box-shadow:
+        0 8px 25px rgba(23, 59, 47, 0.08) !important;
+
+    transition: all 0.3s ease;
+}
+
+main > .card:hover {
+    box-shadow:
+        0 12px 30px rgba(23, 59, 47, 0.12) !important;
+}
+
+
+/* ================= FORM LABELS ================= */
+
+.form-label {
+    color: var(--primary);
+}
+
+
+/* ================= INPUTS ================= */
+
+.form-control,
+.form-select {
+    border: 1px solid #d8e1dc;
+    border-radius: 9px;
+    padding: 11px 13px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+
+    transform: translateY(-1px);
+}
+
+
+/* ================= CHECKBOX ================= */
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.form-check-label {
+    cursor: pointer;
+    color: #444;
+}
+
+
+/* ================= RESULT HEADER ================= */
+
+#resultCount {
+    background: var(--primary) !important;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+
+/* ================= HOSTEL CARD ================= */
+
+.hostel-card {
+    border-radius: 16px !important;
+
+    overflow: hidden;
+
+    background: var(--card);
+
+    border: 1px solid var(--border) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Card Hover */
+
+.hostel-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(25, 135, 84, 0.35) !important;
+
+    box-shadow:
+        0 14px 32px rgba(23, 59, 47, 0.13) !important;
+}
+
+
+/* ================= CARD BODY ================= */
+
+.hostel-card .card-body {
+    padding: 22px;
+}
+
+
+/* Hostel Name */
+
+.hostel-card .card-title {
+    color: var(--primary);
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Location */
+
+.hostel-card .text-muted {
+    color: var(--muted) !important;
+}
+
+
+/* ================= TYPE BADGE ================= */
+
+.hostel-card .badge.bg-success {
+    background: #e2f4ea !important;
+
+    color: #146c43 !important;
+
+    border-radius: 20px;
+
+    padding: 7px 11px;
+
+    font-weight: 600;
+}
+
+
+/* ================= RENT ================= */
+
+.hostel-card h5 {
+    color: var(--primary);
+
+    margin-top: 8px;
+}
+
+
+/* ================= VACANCY ================= */
+
+.hostel-card .badge.bg-danger {
+    border-radius: 20px;
+
+    padding: 7px 11px;
+}
+
+
+/* ================= CARD FOOTER ================= */
+
+.hostel-card .card-footer {
+    padding: 15px 20px !important;
+
+    background: white !important;
+}
+
+
+/* ================= ALL BUTTONS ================= */
+
+.btn {
+    border-radius: 9px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* Primary */
+
+.btn-primary {
+    background: var(--primary);
+
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-light);
+
+    border-color: var(--primary-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(23, 59, 47, 0.22);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+
+/* Success */
+
+.btn-success {
+    background: var(--accent);
+
+    border-color: var(--accent);
+}
+
+.btn-success:hover {
+    background: var(--accent-dark);
+
+    border-color: var(--accent-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* ================= NO RESULTS ================= */
+
+#noResults {
+    background: white;
+
+    border-radius: 16px;
+
+    margin-top: 20px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+#noResults .fs-1 {
+    font-size: 50px !important;
+}
+
+#noResults h3 {
+    color: var(--primary);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: var(--primary);
+
+    color: white;
+
+    margin-top: 40px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 -4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    main > .text-center h1 {
+        font-size: 30px;
+    }
+
+    .hostel-card .card-body {
+        padding: 18px;
+    }
+
+    .navbar-brand {
+        font-size: 19px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    main > .text-center h1 {
+        font-size: 26px;
+    }
+
+    .hostel-card .card-title {
+        font-size: 19px;
+    }
+
+}

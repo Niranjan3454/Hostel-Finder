@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Hostel - Hostel Finder</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/add-hostel.css') }}">
+      
+</head>
+
+<body>
+
+<div class="form-container">
+
+    <h1>Add Your Hostel</h1>
+
+    <p>Enter complete hostel information.</p>
+
+    <form method="POST" action="/owner/add-hostel">
+
+        <label>Hostel Name</label>
+        <input type="text"
+               name="hostel_name"
+               placeholder="Enter hostel name"
+               required>
+
+
+        <label>Address</label>
+        <input type="text"
+               name="address"
+               placeholder="Enter complete address"
+               required>
+
+
+        <label>Area</label>
+        <input type="text"
+               name="area"
+               placeholder="Example: Kothrud"
+               required>
+
+
+        <label>City</label>
+        <input type="text"
+               name="city"
+               placeholder="Example: Pune"
+               required>
+
+
+        <label>Hostel Type</label>
+
+        <select name="hostel_type" required>
+
+            <option value="">Select hostel type</option>
+
+            <option value="BOYS">
+                Boys
+            </option>
+
+            <option value="GIRLS">
+                Girls
+            </option>
+
+            <option value="UNISEX">
+                Unisex
+            </option>
+
+        </select>
+
+
+        <label>Monthly Rent (₹)</label>
+
+        <input type="number"
+               name="rent"
+               min="0"
+               placeholder="Example: 7000"
+               required>
+
+
+        <label>Total Beds</label>
+
+        <input type="number"
+               name="total_beds"
+               min="1"
+               placeholder="Example: 50"
+               required>
+
+
+        <label>Available Beds</label>
+
+        <input type="number"
+               name="available_beds"
+               min="0"
+               placeholder="Example: 12"
+               required>
+
+
+        <label>Contact Number</label>
+
+        <input type="tel"
+               name="contact_no"
+               placeholder="Enter contact number"
+               maxlength="15"
+               required>
+
+
+        <label>Facilities</label>
+
+        <textarea name="facilities"
+                  placeholder="Example: WiFi, Mess, Laundry, Parking, CCTV"></textarea>
+
+
+        <label>Description</label>
+
+        <textarea name="description"
+                  placeholder="Describe your hostel..."></textarea>
+
+
+        <button type="submit">
+            Add Hostel
+        </button>
+
+    </form>
+
+
+    <br>
+
+    <a href="/owner/dashboard">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

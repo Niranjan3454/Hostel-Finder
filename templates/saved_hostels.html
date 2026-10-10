@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saved Hostels - Hostel Finder</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/saved_hostels.css') }}">
+      
+</head>
+
+<body>
+
+<header class="dashboard-header">
+
+    <div>
+        <h2>🏠 Hostel Finder</h2>
+        <p>Your Saved Hostels ❤️</p>
+    </div>
+
+    <a href="/hosteller/dashboard" class="logout-btn">
+        Dashboard
+    </a>
+
+</header>
+
+
+<main class="dashboard-container">
+
+    <div class="welcome-section">
+
+        <h1>❤️ Saved Hostels</h1>
+
+        <p>
+            Hostels you have saved for later.
+        </p>
+
+    </div>
+
+
+    {% if hostels %}
+
+    <div class="hostel-grid">
+
+        {% for hostel in hostels %}
+
+        <div class="hostel-card">
+
+            <h2>
+                {{ hostel.hostel_name }}
+            </h2>
+
+            <p>
+                📍 {{ hostel.area }}, {{ hostel.city }}
+            </p>
+
+            <p>
+                🏠 {{ hostel.hostel_type }}
+            </p>
+
+            <p>
+                💰 ₹{{ hostel.rent }} / month
+            </p>
+
+            <p>
+                🛏️ Available:
+                <strong>{{ hostel.available_beds }}</strong>
+                / {{ hostel.total_beds }}
+            </p>
+
+            <p>
+                📞 {{ hostel.contact_no }}
+            </p>
+
+            <p>
+                🏷️ {{ hostel.facilities }}
+            </p>
+
+
+            <div style="display: flex; gap: 10px;">
+
+                <a href="{{ url_for('hostel_details',
+                                   hostel_id=hostel.hostel_id) }}"
+                   class="dashboard-btn">
+                    View Details
+                </a>
+
+                <form method="POST"
+                      action="{{ url_for('remove_saved_hostel',
+                                         hostel_id=hostel.hostel_id) }}">
+
+                    <button type="submit"
+                            class="dashboard-btn"
+                            style="background: #dc3545; border: none;">
+                        Remove ❤️
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="feature-card text-center">
+
+        <h2>💔 No Saved Hostels</h2>
+
+        <p>
+            You haven't saved any hostels yet.
+        </p>
+
+        <a href="/search"
+           class="dashboard-btn">
+            🔎 Find Hostels
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</main>
+
+
+</body>
+</html>
